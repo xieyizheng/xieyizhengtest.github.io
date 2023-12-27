@@ -72,9 +72,11 @@
    .author__avatar {
     display: table-cell;
     vertical-align: top;
-    width: 48px; // You can adjust this as needed
+    // width: 48px; // You can adjust this as needed
     height: 500;
     background-image: url("./images/output.mp4");
+    object-fit: cover;
+    background-repeat: no-repeat;
   
     @include breakpoint($large) {
       display: block;
