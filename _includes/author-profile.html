@@ -7,18 +7,9 @@
 <div itemscope itemtype="http://schema.org/Person">
 
   <div class="author__avatar">
-    {% if author.avatar contains "://" %}
-      <!-- Check if the source is a video -->
-      {% if author.avatar ends_with ".mp4" %}
-        <video autoplay loop muted playsinline class="author__avatar_video">
-          <source src="{{ author.avatar }}" type="video/mp4">
-        </video>
-      {% else %}
-        <img src="{{ author.avatar }}" alt="{{ author.name }}">
-      {% endif %}
-    {% else %}
-      <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
-    {% endif %}
+    <video autoplay loop muted playsinline class="author__avatar_video">
+      <source src="{{ author.avatar }}" type="video/mp4">
+    </video>
   </div>
   
 
