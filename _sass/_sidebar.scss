@@ -73,6 +73,7 @@
     display: table-cell;
     vertical-align: top;
     width: 48px; // You can adjust this as needed
+    height: 500;
     background-image: url("./images/output.mp4");
   
     @include breakpoint($large) {
