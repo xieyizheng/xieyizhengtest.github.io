@@ -8,11 +8,19 @@
 
   <div class="author__avatar">
     {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
+      <!-- Check if the source is a video -->
+      {% if author.avatar ends_with ".mp4" %}
+        <video autoplay loop muted playsinline class="author__avatar_video">
+          <source src="{{ author.avatar }}" type="video/mp4">
+        </video>
+      {% else %}
+        <img src="{{ author.avatar }}" alt="{{ author.name }}">
+      {% endif %}
     {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+      <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     {% endif %}
   </div>
+  
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>

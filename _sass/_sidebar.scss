@@ -69,29 +69,34 @@
    Author profile and links
    ========================================================================== */
 
-.author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 48px;
-  // set width only, for non-square avatars
-  // height: 36px;
-
-  @include breakpoint($large) {
-    display: block;
-    width: auto;
-    height: auto;
-  }
-
-  img {
-    max-width: 175px;
-    border-radius: 50%;
-
+   .author__avatar {
+    display: table-cell;
+    vertical-align: top;
+    width: 48px; // You can adjust this as needed
+  
     @include breakpoint($large) {
-      padding: 5px;
-      border: 1px solid $border-color;
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  
+    img, video {
+      max-width: 175px;
+      border-radius: 50%;
+  
+      @include breakpoint($large) {
+        padding: 5px;
+        border: 1px solid $border-color;
+      }
+    }
+  
+    video {
+      width: 100%;
+      height: auto;
+      object-fit: cover; // This ensures the video covers the area without stretching
     }
   }
-}
+  
 
 .author__content {
   display: table-cell;
