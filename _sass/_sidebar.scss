@@ -91,9 +91,14 @@
     }
   
     video {
-      width: 100%;
+      width: 50%;
       height: auto;
       object-fit: cover; // This ensures the video covers the area without stretching
+
+      @include breakpoint($large) {
+        padding: 5px;
+        border: 1px solid $border-color;
+      }
     }
   }
   
