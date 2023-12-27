@@ -76,7 +76,7 @@
     height: 500;
     background-image: url("./images/output.mp4");
     background-color: #cccccc;
-    object-fit: cover;
+    background-size: cover;
     background-repeat: no-repeat;
   
     @include breakpoint($large) {
